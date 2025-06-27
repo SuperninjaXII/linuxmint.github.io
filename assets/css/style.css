@@ -1,0 +1,23 @@
+@import url("base.css");
+header {
+  display: flex;
+  width: 100vw;
+  height: 5vh;
+  border-bottom: 1px solid var(--black);
+  .brand{
+  margin-right:  auto;
+  }
+  & .secondary-nav{
+    display: flex;
+    flex-direction: row;
+    margin-right:  auto;
+    gap: 10px;
+    li{
+      list-style: none;
+      a{
+        text-decoration: underline;
+        color: var(--black);
+      }
+    }
+  }
+}
