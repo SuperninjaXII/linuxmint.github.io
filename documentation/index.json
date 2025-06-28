@@ -1,3 +1,4 @@
 {
-  "introduction": ["welcome.md", "reporting-an-issue.md"]
+  "introduction": ["welcome.md", "reporting-an-issue.md"],
+  "cinnamon":["cinnamon.md","building.md","write-applet.md","xlet-versioning.md","xlet-settings.md","xlet-settings-ref.md","importer.md","cjs.md","documenting-tutorial.md","documenting-source.md"]
 }
