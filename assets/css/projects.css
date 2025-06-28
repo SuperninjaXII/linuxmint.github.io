@@ -1,0 +1,28 @@
+@import url("./base.css");
+
+#projects {
+  width: 70svw;
+  margin: auto;
+
+  .heading {
+    font-size: var(--font-xlg);
+  }
+}
+
+.project-container {
+  align-items: center;
+  padding: var(--space-xlg);
+
+  .icon img {
+    width: 50px;
+  }
+
+  .name {
+    font-size: var(--font-lg);
+    letter-spacing: -0.125px;
+  }
+
+  .description {
+    letter-spacing: 0.1px;
+  }
+}

@@ -1,9 +1,62 @@
-<section id="projects">
-  <h1>projects</h1>
-  <div class="project-container">
-    <div class="icon">
-      <img src="../icons/cinnamon-logo.svg" alt="cinnamon-logo" />
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>linuxmint|Documentation</title>
+  <link href="../assets/css/style.css" rel="stylesheet" />
+  <link href="../assets/css/projects.css" rel="stylesheet" />
+</head>
+
+<body>
+
+  <header>
+    <div class="brand">
+      <img src="../icons/linux-mint.svg" alt="logo" class="logo" id="logo" />
+      <p>Mint</p>
     </div>
-    <div class="description">this is cinnamon a desktop-environment</div>
-  </div>
-</section>
+    <div class="secondary-nav" hx-push-url="true">
+      <li class="">
+        <a href="/index.html">Documentation</a>
+      </li>
+      <li class="active">
+        <a hx-get="./projects.html" hx-target=".main-container">Projects
+      </li>
+      <li>
+        <a hx-get="./pages/community.html" hx-target=".main-container">community</a>
+      </li>
+    </div>
+  </header>
+
+  <section class="main-container">
+    <section id="projects">
+      <h1 class="heading">Projects</h1>
+      <div class="project-container">
+        <div class="icon">
+          <img src="../icons/cinnamon-logo.svg" alt="cinnamon-logo" />
+        </div>
+        <h1 class="name">Cinnamon</h1>
+        <div class="description">this is cinnamon a desktop-environment</div>
+      </div>
+      <div class="project-container">
+        <div class="icon">
+          <img src="../icons/xreader.svg" alt="cinnamon-logo" />
+        </div>
+        <h1 class="name">Xapps</h1>
+        <div class="description">this is the xapps</div>
+      </div>
+      <div class="project-container">
+        <div class="icon">
+          <img src="../icons/linux-mint.svg" alt="cinnamon-logo" />
+        </div>
+        <h1 class="name">Linux Mint OS</h1>
+        <div class="description">this is cinnamon a desktop-environment</div>
+      </div>
+
+
+    </section>
+  </section>
+</body>
+
+</html>
