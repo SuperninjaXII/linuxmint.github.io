@@ -1,5 +1,3 @@
-
-
 ## Applet, desklet and extension settings
 
 ### Introduction

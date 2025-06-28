@@ -1,4 +1,3 @@
-
 ## Writing documentation in source
 
 The C part of Cinnamon can be documented using standard gtk-doc format, and there should be plenty of tutorials on that. The JavaScript part of Cinnamon can also be documented using something that resembles gtk-doc format.

@@ -1,7 +1,3 @@
-[Home](/) / 
-[Reference](/reference/git/) / 
-[Cinnamon Tutorials](/reference/git/cinnamon-tutorials) /
-[Documentation](/reference/git/cinnamon-tutorials/documentation.html)
 
 ## Using documentation
 
@@ -98,17 +94,17 @@ A mask representing which mouse buttons an StButton responds to.
 <tr>
 <td class="enum_member_name">ST_BUTTON_ONE</td>
 <td class="enum_member_description">button 1 (left)</td>
-<td class="enum_member_annotations"> </td>
+<td class="enum_member_annotations"> </td>
 </tr>
 <tr>
 <td class="enum_member_name">ST_BUTTON_TWO</td>
 <td class="enum_member_description">button 2 (middle)</td>
-<td class="enum_member_annotations"> </td>
+<td class="enum_member_annotations"> </td>
 </tr>
 <tr>
 <td class="enum_member_name">ST_BUTTON_THREE</td>
 <td class="enum_member_description">button 3 (right)</td>
-<td class="enum_member_annotations"> </td>
+<td class="enum_member_annotations"> </td>
 </tr>
 </tbody>
 </table>
