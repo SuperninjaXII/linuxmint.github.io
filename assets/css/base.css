@@ -1,11 +1,42 @@
+@font-face {
+  font-family: noto;
+  src: url("./NotoSansMono-VariableFont_wdth,wght.ttf");
+}
+
 :root {
-  --black:#000;
-  --white:#fff;
+  --black: #000;
+  --white: #fff;
+
+  --font-xs: 7px;
+  --font-sm: 10px;
+  --font-neutral: 12px;
+  --font-md: 16px;
+  --font-lg: 24px;
+  --font-xlg: 48px;
+
+  --space-xs: 0.25rem;
+  --space-sm: 0.4rem;
+  --space-md: 1.2rem;
+  --space-lg: 1.8rem;
+  --space-xlg: 2.5rem;
+
+  --neutral-1: hsl(0, 0%, 93%);
+  --neutral-2: hsl(0, 0%, 68%);
+  --neutral-3: hsl(0, 0%, 56%);
+  --neutral-4: hsl(0, 0%, 36%);
+  --neutral-5: hsl(0, 0%, 22%);
+
+  --green-1: hsl(90, 35%, 70%);
+  --green-2: hsl(90, 60%, 60%);
+  --green-3: hsl(90, 71%, 50%);
+  --green-4: hsl(90, 80%, 45%);
+  --green-5: hsl(90, 90%, 30%);
 }
 
 *,
 :root,
 body {
+  font-family: noto;
   margin: 0;
   padding: 0;
 }

@@ -1,33 +1,66 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Docs</title>
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet" />
 </head>
 
 <body>
     <header>
         <div class="brand">
-            <p>logo</p>
+            <img src="./icons/linux-mint.svg" alt="logo" class="logo" id="logo" />
+            <p>Mint</p>
         </div>
         <div class="secondary-nav">
-            <li><a href="#">Projects</a></li>
+            <li class="active"><a href="#">Projects</a></li>
             <li><a href="#">Developers</a></li>
             <li><a href="#">community</a></li>
         </div>
     </header>
-    <nav>
-        <li>something</li>
-    </nav>
-    <main>
+    <section class="main-container">
+        <!-- topics nav  -->
+        <nav>
+            <div class="topics-group">
+                <p class="topic-heading">heading</p>
+                <ul>
+                    <li>something</li>
+                    <li>something</li>
+                    <li>something</li>
+                    <li>something</li>
+                    <li>something</li>
+                    <li>something</li>
+                </ul>
+            </div>
+            <div class="topics-group">
+                <p class="topic-heading">heading</p>
+                <ul>
+                    <li>something</li>
+                    <li>something</li>
+                    <li>something</li>
+                    <li>something</li>
+                    <li>something</li>
+                    <li>something</li>
+                </ul>
+            </div>
+        </nav>
 
-    </main>
-    <footer>
-
-    </footer>
+        <main></main>
+        <aside>
+            <ul class="topic-nav">
+                <p class="heading">on this page</p>
+                <li class="parent">parent</li>
+                <li class="child">child</li>
+                <li class="child">child</li>
+                <li class="parent">parent</li>
+                <li class="child">child</li>
+                <li class="child">child</li>
+            </ul>
+        </aside>
+    </section>
+    <footer></footer>
 </body>
 
 </html>
