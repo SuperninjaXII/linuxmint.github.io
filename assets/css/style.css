@@ -1,10 +1,19 @@
 @import url("base.css");
 @import url("./markdown.css");
 
+body {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
 header {
   display: flex;
+  z-index: 5;
+  position: sticky;
+  top: 0;
   width: 100vw;
   height: 10vh;
+  background: var(--white);
   border-bottom: 1.2px solid var(--neutral-2);
 
   .brand {
@@ -63,10 +72,12 @@ header {
     display: flex;
     flex-direction: column;
     width: 15svw;
+    overflow-y: auto;
+    overflow-x: hidden;
     border-right: 1.2px solid var(--neutral-2);
 
     .topics-group {
-      padding-left: var(--space-xlg);
+      padding-left: var(--space-lg);
       padding-top: var(--space-md);
 
       .topic-heading {
@@ -93,15 +104,19 @@ header {
     display: flex;
     flex-direction: column;
     width: 70svw;
-    min-height: 100svh;
+    max-height: 100svh;
+    overflow-y: auto;
   }
 
   aside {
     display: flex;
     flex-direction: column;
+    position: sticky;
+    z-index: 3;
     width: 15svw;
     min-height: 100svh;
     border-left: 1.2px solid var(--neutral-2);
+    overflow-y: auto;
 
     .topic-nav {
       padding-left: var(--space-md);

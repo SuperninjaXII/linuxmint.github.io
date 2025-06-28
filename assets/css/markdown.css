@@ -3,6 +3,7 @@
 main .container {
   margin-inline: auto;
   margin-top: var(--space-md);
+  width: 45svw;
 
   h1,
   h2,
