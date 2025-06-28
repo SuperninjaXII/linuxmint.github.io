@@ -1,0 +1,34 @@
+@import url("base.css");
+
+main .container {
+  margin-inline: auto;
+  margin-top: var(--space-md);
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: var(--space-xs);
+    letter-spacing: -1.2px;
+  }
+
+  h1 {
+    font-size: var(--font-lg);
+    margin-bottom: var(--space-md);
+  }
+
+  h2 {
+    font-size: var(--font-md);
+  }
+
+  h3 {
+    font-size: var(--font-sm);
+  }
+
+  p {
+    text-indent: var(--space-lg);
+    letter-spacing: 0.2px;
+  }
+}

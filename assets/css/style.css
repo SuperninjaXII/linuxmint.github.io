@@ -1,4 +1,5 @@
 @import url("base.css");
+@import url("./markdown.css");
 
 header {
   display: flex;
@@ -90,6 +91,7 @@ header {
 
   main {
     display: flex;
+    flex-direction: column;
     width: 70svw;
     min-height: 100svh;
   }
