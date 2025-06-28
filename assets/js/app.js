@@ -22,7 +22,7 @@ async function getMarkdownFiles() {
   nav.innerHTML = "";
   for (const topic in index) {
     const fileList = index[topic]
-      .map((file) => `<li data-file="${file}">${file}</li>`)
+      .map((file) => `<li data-file="${file}">${file.replace(".md", "")}</li>`)
       .join("");
     nav.innerHTML += `
 <div class="topics-group">
