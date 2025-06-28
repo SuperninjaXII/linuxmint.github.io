@@ -14,10 +14,16 @@
             <img src="./icons/linux-mint.svg" alt="logo" class="logo" id="logo" />
             <p>Mint</p>
         </div>
-        <div class="secondary-nav">
-            <li class="active"><a href="#">Documentation</a></li>
-            <li><a href="./pages/projects.html">Projects</a></li>
-            <li><a href="#">community</a></li>
+        <div class="secondary-nav" hx-push-url="true">
+            <li class="active">
+                <a href="/index.html">Documentation</a>
+            </li>
+            <li>
+                <a hx-get="./pages/projects.html" hx-target=".main-container">Projects
+            </li>
+            <li>
+                <a hx-get="./pages/community.html" hx-target=".main-container">community</a>
+            </li>
         </div>
     </header>
     <section class="main-container">
@@ -39,7 +45,8 @@
             </ul>
         </aside>
     </section>
-    <script src="./assets/js/showdown.min.js"></script>
+    <script src="./assets/lib/htmx.js"></script>
+    <script src="./assets/lib/showdown.min.js"></script>
     <script src="./assets/js/app.js"></script>
 </body>
 
