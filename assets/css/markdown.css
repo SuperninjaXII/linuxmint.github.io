@@ -16,20 +16,42 @@ main .container {
   }
 
   h1 {
-    font-size: var(--font-lg);
+    font-size: var(--font-xlg);
     margin-bottom: var(--space-md);
+    font-weight: 600;
   }
 
   h2 {
-    font-size: var(--font-md);
+    font-size: var(--font-lg);
+    font-weight: 500;
   }
 
   h3 {
-    font-size: var(--font-sm);
+    font-weight: 500;
+    font-size: var(--font-lg);
+    margin-top: var(--space-xlg);
   }
 
   p {
     text-indent: var(--space-lg);
     letter-spacing: 0.2px;
+    line-height: 2rem;
+    font-weight: 350;
+
+    color: var(--neutral-4);
+  }
+
+  ul {
+    padding: var(--space-xlg);
+
+    li {
+      margin: var(--space-sm);
+      color: var(--neutral-5);
+    }
+  }
+
+  pre {
+    padding-top: var(--font-lg);
+    padding-bottom: var(--font-lg);
   }
 }

@@ -8,6 +8,7 @@ async function loadMarkdown(fileName) {
     .then((content) => {
       const html = converter.makeHtml(content);
       main.innerHTML = html;
+      hljs.highlightAll();
     })
     .catch(console.error);
   generateNavlinks();
