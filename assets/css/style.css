@@ -12,7 +12,7 @@ header {
   position: sticky;
   top: 0;
   width: 100vw;
-  height: 10vh;
+  height: 8vh;
   background: var(--white);
   border-bottom: 1.2px solid var(--neutral-2);
 
@@ -72,6 +72,7 @@ header {
     display: flex;
     flex-direction: column;
     width: 15svw;
+    max-height: 90svh;
     overflow-y: auto;
     overflow-x: hidden;
     border-right: 1.2px solid var(--neutral-2);
@@ -104,6 +105,7 @@ header {
     display: flex;
     flex-direction: column;
     width: 70svw;
+    margin-top: var(--space-xlg);
     max-height: 100svh;
     overflow-y: auto;
   }
@@ -114,9 +116,10 @@ header {
     position: sticky;
     z-index: 3;
     width: 15svw;
-    min-height: 100svh;
+    max-height: 90svh;
     border-left: 1.2px solid var(--neutral-2);
     overflow-y: auto;
+    overflow-x: hidden;
 
     .topic-nav {
       padding-left: var(--space-md);
@@ -140,9 +143,8 @@ header {
       }
     }
 
-    li:hover {
-      color: var(--white);
-      background: var(--green-4);
+    li a:hover {
+      color: var(--green-3);
     }
 
     .parent {
@@ -163,4 +165,9 @@ header {
       color: var(--neutral-4);
     }
   }
+}
+
+.active {
+  color: var(--green-4) !important;
+  text-decoration: underline;
 }

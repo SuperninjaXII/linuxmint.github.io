@@ -1,35 +1,231 @@
+# Set Up
 
-# Part II. Building Cinnamon
+This chapter explains how to get your computer set up.
 
-## Debian-based systems
+## Create a Sandbox
 
-### Add APT sources repositories
+When you build projects it produces `.deb` packages in their parent directory, so it's a good idea to create a directory for all your development needs, in which you'll have subdirectories for each project, or each group of projects. This keeps things tidy and well organized in your computer so it becomes easier to search for code across different projects.
 
-Open `/etc/apt/sources.list`. For each deb line, add the same line with deb replaced with deb-src. For instance, here's how it should look like in Linux Mint 22:
+We commonly call our main development directory "Sandbox" and place it in our home folder.
+
+```bash
+mkdir ~/Sandbox
+````
+
+Of course, you can call your "Sandbox" whatever you want and place it anywhere you want as well.
+
+## Install mint-dev-tools
+
+Install the `mint-dev-tools` package from the Linux Mint repositories.
+
+```bash
+apt update
+apt install mint-dev-tools --install-recommends
+```
+
+It contains useful tools to help you compile and develop Linux Mint projects.
+
+
+## Overview
+
+The Cinnamon desktop environment is a very large development project.
+
+Between 2006 and 2010 the main desktop environment for Linux Mint was GNOME 2. It was very stable and very popular.
+
+In 2011, Linux Mint 12 was unable to ship with GNOME 2. The upstream GNOME team had released a brand new desktop (GNOME 3 aka "Gnome Shell") which was using new technologies (Clutter, GTK3), which had a completely different design and implemented a radically different paradigm than its predecessor but which used the same namespaces and thus it couldn't be installed alongside GNOME 2.
+
+To tackle this issue two new projects were started:
+
+* **MATE**: A fork of GNOME 2.
+* **MGSE**: GNOME 3 extensions to restore GNOME 2-like behavior.
+
+From MGSE came Cinnamon, a full fork of GNOME 3. Linux Mint 13 was the first to ship Cinnamon officially.
+
+---
+
+## Processes
+
+![Cinnamon Processes](images/cinnamon-design.svg)
+
+At session start, Cinnamon launches:
+
+* `cinnamon-session`
+* `cinnamon`
+* `nemo-desktop`
+* `cinnamon-screensaver`
+* various `csd-*` processes
+
+---
+
+## Libraries
+
+### cinnamon-menus
+
+Reads and monitors installed applications.
+[GitHub](https://github.com/linuxmint/cinnamon-menus)
+
+### cinnamon-desktop
+
+Utility library for shared settings and functions.
+
+| Resource         | Description               |
+| ---------------- | ------------------------- |
+| cinnamon.desktop | Shared dconf schemas      |
+| libcvc           | PulseAudio volume control |
+| gnomerr          | Monitor configs           |
+| gnome-xkb        | Keyboard layouts          |
+| gnome-bg         | Wallpaper handling        |
+| gnome-installer  | App installation helper   |
+
+[GitHub](https://github.com/linuxmint/cinnamon-desktop)
+
+### muffin
+
+Window management library implemented inside the main `cinnamon` process.
+Includes Clutter and Cogl libraries.
+[GitHub](https://github.com/linuxmint/muffin)
+
+### cjs
+
+JavaScript interpreter for Cinnamon using [SpiderMonkey](https://spidermonkey.dev/)
+[GitHub](https://github.com/linuxmint/cjs)
+
+---
+
+## Core Components
+
+### cinnamon-session
+
+Manages session startup and shutdown.
+
+### cinnamon-settings-daemon
+
+Background system processes.
+
+| Process       | Description       |
+| ------------- | ----------------- |
+| csd-automount | Mounts devices    |
+| csd-clipboard | Clipboard manager |
+| csd-power     | Power management  |
+| ...           | ...               |
+
+[GitHub](https://github.com/linuxmint/cinnamon-settings-daemon)
+
+---
+
+## Visible Desktop Layer
+
+### cinnamon-screensaver
+
+Locks screen and handles power-related tasks.
+[GitHub](https://github.com/linuxmint/cinnamon-screensaver)
+
+### cinnamon
+
+Main Cinnamon project.
+**C:** Widget toolkit, status icons, etc.
+**JS:** Panels, applets, effects
+**Python:** System settings
+[GitHub](https://github.com/linuxmint/cinnamon)
+
+### nemo
+
+File manager and `nemo-desktop`.
+[GitHub](https://github.com/linuxmint/nemo)
+
+### nemo-extensions
+
+Optional C and Python extensions.
+[GitHub](https://github.com/linuxmint/nemo-extensions)
+
+### cinnamon-control-center
+
+Legacy C modules for settings. Most now in Cinnamon.
+[GitHub](https://github.com/linuxmint/cinnamon-control-center)
+
+---
+
+# Building Cinnamon
+
+## General Build Instructions
+
+### Create a Sandbox
+
+When you build projects it produces `.deb` packages in their parent directory, so it's a good idea to create a directory for all your development needs, in which you'll have subdirectories for each project, or each group of projects. This keeps things tidy and well organized in your computer so it becomes easier to search for code across different projects.
+
+We commonly call our main development directory "Sandbox" and place it in our home folder.
+
+```bash
+mkdir ~/Sandbox
+````
+
+Of course, you can call your "Sandbox" whatever you want and place it anywhere you want as well.
+
+### Install mint-dev-tools
+
+Install the `mint-dev-tools` package from the Linux Mint repositories.
+
+```bash
+apt update
+apt install mint-dev-tools --install-recommends
+```
+
+It contains useful tools to help you compile and develop Linux Mint projects.
+
+
+
+### Installing Source
+
+```bash
+cd ~/Sandbox
+git clone https://github.com/linuxmint/mintinstall.git
+```
+
+### First-Time Build
+
+```bash
+cd ~/Sandbox/mintinstall
+mint-build
+```
+
+### Faster Rebuild
+
+```bash
+cd ~/Sandbox/mintinstall
+dpkg-buildpackage
+```
+
+### Build Order
+
+If projects depend on each other:
+
+1. `mint-common`
+2. `xapps`
+
+---
+
+## Debian-based Systems
+
+### Add APT Source Repositories
+
+Edit `/etc/apt/sources.list`:
 
 ```bash
 deb http://packages.linuxmint.com wilma main upstream import
 deb-src http://packages.linuxmint.com wilma main upstream import
-
-deb http://archive.ubuntu.com/ubuntu/ noble main restricted universe multiverse
-deb-src http://archive.ubuntu.com/ubuntu/ noble main restricted universe multiverse
-
-deb http://archive.ubuntu.com/ubuntu/ noble-updates main restricted universe multiverse
-deb-src http://archive.ubuntu.com/ubuntu/ noble-updates main restricted universe multiverse
-
-deb http://extras.ubuntu.com/ubuntu noble main
-deb-src http://extras.ubuntu.com/ubuntu noble main
 ```
 
-### Get build dependencies
-Then we install the packages needed to compile the Cinnamon stack. Run the following in a terminal (as root):
+### Install Build Dependencies
+
 ```bash
-apt-get update
-apt-get install dpkg-dev
-sudo apt-get build-dep cinnamon cinnamon-control-center cinnamon-desktop cinnamon-menus cinnamon-screensaver cinnamon-session cinnamon-settings-daemon cinnamon-translations cjs muffin nemo
+sudo apt-get update
+sudo apt-get install dpkg-dev
+sudo apt-get build-dep cinnamon cinnamon-control-center cinnamon-desktop \
+  cinnamon-menus cinnamon-screensaver cinnamon-session \
+  cinnamon-settings-daemon cinnamon-translations cjs muffin nemo
 ```
 
-Now get the latest git code for everything. Run (not as root):
+### Clone All Repositories
 
 ```bash
 git clone git://github.com/linuxmint/cinnamon.git
@@ -45,234 +241,100 @@ git clone git://github.com/linuxmint/muffin.git
 git clone git://github.com/linuxmint/nemo.git
 ```
 
-### Compile and install the stack
+### Compile Order
 
-Build and install in the following order. Some packages are required to be <span class="emphasis"><em>installed</em></span> prior to building later packages. See below for how to build and install.
-
-```
+```text
 cinnamon-translations
 cinnamon-desktop
 cinnamon-menus
-**INSTALL PRECEDING PACKAGES**
+**INSTALL**
 cinnamon-session
 cinnamon-settings-daemon
 cinnamon-screensaver
 cjs
-**INSTALL PRECEDING PACKAGES**
+**INSTALL**
 cinnamon-control-center
 muffin
-**INSTALL PRECEDING PACKAGES**
+**INSTALL**
 cinnamon
 nemo
-**INSTALL PRECEDING PACKAGES**
+**INSTALL**
 ```
 
-To build a package:
+### Build
 
 ```bash
-cd *package-name*
+cd package-name
 dpkg-buildpackage
-cd ..
 ```
 
-To install a package:
+### Install
 
 ```bash
-sudo dpkg -i *packages produced*
+sudo dpkg -i ../*.deb
 ```
 
-### Optional: Compiling from stable branch
-
-The instructions above compile the Cinnamon stack from their "master" branch, which isn't always stable. To compile from the stable branch, instead of the usual building procedure, you need to do the following (for all packages):
+### Stable Branch
 
 ```bash
-cd *package-name*
+cd package-name
 git checkout stable
 dpkg-buildpackage
-cd ..
 ```
 
-## Other systems
+---
 
-### Get build dependencies
-Install the following dependencies using your system's package manager. For build-time dependencies, you may need the development headers (usually found in packages suffixed `-dev` or `-devel`). If a dependency is not available for your system, you can build and install it.
-* Build-time dependencies:
-	* C/C++ compiler
-	* `at-spi2-core`, or `at-spi2-atk` and `atk >= 2.5.3`
-	* `cairo >= 1.10.0`
-	* `dbus`
-	* `fontconfig`
-	* `fribidi >= 1.0.0`
-	* `gdk-pixbuf >= 2.22.0`
-	* `gettext`
-	* `glib >= 2.66.0`
-	* `gobject-introspection >= 1.66.0`
-	* `graphene >= 1.9.3`
-	* `gtk3 >= 3.19.8`
-	* `intltool`
-	* `iso-codes`
-	* `json-glib >= 1.6`
-	* `libcanberra >= 0.26`
-	* `libffi`
-	* `libgnomekbd >= 3.6.0`
-	* `libgsf`
-	* `libgudev >= 232`
-	* `libice`
-	* `libnotify >= 0.7.3`
-	* `libsm`
-	* `libx11`
-	* `libxau`
-	* `libxcb`
-	* `libxcomposite >= 0.4`
-	* `libxcursor`
-	* `libxdamage`
-	* `libxext >= 1.1`
-	* `libxfixes >= 3`
-	* `libxi >= 1.7.4`
-	* `libxinerama`
-	* `libxkbcommon >= 0.4.3`
-	* `libxkbfile`
-	* `libxklavier >= 5.1`
-	* `libxml2`
-	* `libxrandr >= 1.5.0`
-	* `libxrender`
-	* `libxtst`
-	* `linux-pam` or `openpam`
-	* `make`
-	* `mesa` or `libglvnd`
-	* `meson >= 0.56.0`
-	* `pango >= 1.40.0`
-	* `pkg-config` or `pkgconf`
-	* `polkit >= 0.103`
-	* `pulseaudio >= 12.99.3`
-	* `spidermonkey = 115`
-	* `upower >= 0.99.8`
-	* `xapp >= 2.6.0`
-	* `xdotool`
-	* `xkeyboard-config`
-	* `xorgproto`
-* Optional build-time dependencies:
-	* logind implementation (`systemd` or `elogind`)
-	* udev implementation `>= 228` (`systemd`, `eudev`, `libudev-devd`, or `libudev-zero`)
-	* `colord >= 0.1.27`
-	* `cups >= 1.4`
-	* `egl-wayland`
-	* `exempi >= 2.2.0`
-	* `gstreamer`
-	* `gtk-doc`
-	* `libdrm`
-	* `libexif >= 0.6.20`
-	* `libinput >= 1.7`
-	* `librsvg >= 2.36.2`
-	* `libwacom >= 0.13`
-	* `libxcvt`
-	* `libxtrans`
-	* `little-cms >= 2.0`
-	* `modemmanager >= 0.7`
-	* `networkmanager >= 1.2.0`
-	* `nss >= 3.11.2`
-	* `pipewire >= 0.3.0`
-	* `selinux >= 2.0`
-	* `startup-notification >= 0.7`
-	* `sysprof3` and/or `sysprof4`
-	* `tinysparql` or `tracker`
-	* `wayland >= 1.13.0`
-	* `wayland-protocols >= 1.19`
-	* `xwayland`
-* Run-time dependencies (these can be installed before or after compiling Cinnamon):
-	* NTPD implementation, `systemd`, or `openrc-settingsd`
-	* X11 server
-	* `accountsservice`
-	* `adwaita-icon-theme`
-	* `bash`
-	* `caribou`
-	* `evolution-data-server`
-	* `gnome-icon-theme` or `adwaita-icon-theme-legacy`
-	* `gsound`
-	* `keybinder3`
-	* `libical`
-	* `libtimezonemap`
-	* `touchegg`
+## Other Systems
 
-Python has to be installed, along with some Python modules. Install the following modules by using your system's package manager, from PyPI by using `pip`, or by building and installing them:
-* `dbus-python`
-* `pexpect`
-* `pillow`
-* `psutil`
-* `py-setproctitle` (`setproctitle` on PyPI)
-* `pycairo`
-* `pygobject`
-* `python-pam`
-* `python3-xapp` (not on PyPI)
-* `pytz`
-* `requests`
-* `tinycss2`
-* `xlrd`
+### Build Dependencies
 
-Now get the latest git code for everything. Run (not as root):
+Install development packages (`*-dev`) for:
+
+**Core:**
+
+* `glib`, `gtk3`, `gobject-introspection`, `meson`, `pulseaudio`, `spidermonkey`, etc.
+
+**Optional:**
+
+* `cups`, `gstreamer`, `libwacom`, `wayland`, etc.
+
+**Python:**
+
+* `dbus-python`, `pexpect`, `pillow`, `pycairo`, `pygobject`, etc.
+
+### Clone All Repositories
+
+Same as in Debian section.
+
+### Compile Order
+
+Same as Debian.
+
+### Compile with Meson
 
 ```bash
-git clone git://github.com/linuxmint/cinnamon.git
-git clone git://github.com/linuxmint/cinnamon-control-center.git
-git clone git://github.com/linuxmint/cinnamon-desktop.git
-git clone git://github.com/linuxmint/cinnamon-menus.git
-git clone git://github.com/linuxmint/cinnamon-screensaver.git
-git clone git://github.com/linuxmint/cinnamon-session.git
-git clone git://github.com/linuxmint/cinnamon-settings-daemon.git
-git clone git://github.com/linuxmint/cinnamon-translations.git
-git clone git://github.com/linuxmint/cjs.git
-git clone git://github.com/linuxmint/muffin.git
-git clone git://github.com/linuxmint/nemo.git
-```
-
-### Compile and install the stack
-
-Build and install in the following order. See below for how to build and install.
-
-```
-cinnamon-translations
-cinnamon-desktop
-cinnamon-menus
-cinnamon-session
-cinnamon-settings-daemon
-cinnamon-screensaver
-cjs
-cinnamon-control-center
-muffin
-cinnamon
-nemo
-```
-
-To build and install a package:
-
-```bash
-cd *package-name*
+cd package-name
 meson setup builddir
 meson compile -C builddir
 meson install -C builddir
-cd ..
 ```
 
-The procedure for building and installing `cinnamon-translations` is different:
+### cinnamon-translations
 
 ```bash
 cd cinnamon-translations
 make
 sudo cp -r usr /
-cd ..
 ```
 
-### Optional: Compiling from stable branch
-
-The instructions above compile the Cinnamon stack from their "master" branch, which isn't always stable. To compile from the stable branch, instead of the usual building procedure, you need to do the following (for all packages except `cinnamon-translations`):
+### Stable Branch
 
 ```bash
-cd *package-name*
+cd package-name
 git checkout stable
 meson setup builddir
 meson compile -C builddir
 meson install -C builddir
-cd ..
 ```
 
 For `cinnamon-translations`:
@@ -282,5 +344,4 @@ cd cinnamon-translations
 git checkout stable
 make
 sudo cp -r usr /
-cd ..
 ```

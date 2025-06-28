@@ -1,3 +1,8 @@
-# Welcome
+# Linux Mint Developer Guide
 
-This is the linux mint documentation site
+![QR Code](./images/qr.png){: width="100px" style="float: right;" }
+
+If you want to help us develop Linux Mint, you've come to the right place!
+
+Welcome to the Linux Mint Development Guide.
+

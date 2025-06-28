@@ -22,7 +22,7 @@ async function getMarkdownFiles() {
   nav.innerHTML = "";
   for (const topic in index) {
     const fileList = index[topic]
-      .map((file) => `<li onclick="loadMarkdown('${file}')">${file}</li>`)
+      .map((file) => `<li data-file="${file}">${file}</li>`)
       .join("");
     nav.innerHTML += `
 <div class="topics-group">
@@ -33,9 +33,19 @@ async function getMarkdownFiles() {
 </div>
 `;
   }
+  const listItems = nav.querySelectorAll("li");
+  listItems.forEach((li) => {
+    li.addEventListener("click", () => {
+      listItems.forEach((item) => item.classList.remove("active"));
+      li.classList.add("active");
+      const file = li.getAttribute("data-file");
+      if (file) loadMarkdown(file);
+    });
+  });
 }
 
 getMarkdownFiles();
+
 //generates aside links
 function generateNavlinks() {
   const container = document.querySelector("main .container");
@@ -47,7 +57,7 @@ function generateNavlinks() {
   if (headings.length === 0) return;
 
   let currentLevel = 0;
-  let stack = [];
+  const stack = [];
 
   toc.innerHTML = "";
   headings.forEach((heading, index) => {
