@@ -55,14 +55,40 @@ Whenever multiple desktop components need to access the same resource (whether t
 
 Here’s an overview of some of the resources currently in `cinnamon-desktop`:
 
-| Resource             | Description                                                                 |
-|----------------------|-----------------------------------------------------------------------------|
-| cinnamon.desktop     | dconf settings schemas used by several Cinnamon components                  |
-| libcvc               | A PulseAudio utility library used to control sound volume and devices       |
-| gnomerr              | An Xrandr utility library to detect, load and save monitor configurations   |
-| gnome-xkb            | A keyboard layout utility library                                           |
-| gnome-bg             | A wallpaper utility library                                                 |
-| gnome-installer      | A cross-distribution library used to install software applications          |
+<table>
+  <thead>
+    <tr>
+      <th>Resource</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>cinnamon.desktop</td>
+      <td>dconf settings schemas used by several Cinnamon components</td>
+    </tr>
+    <tr>
+      <td>libcvc</td>
+      <td>A PulseAudio utility library used to control sound volume and devices</td>
+    </tr>
+    <tr>
+      <td>gnomerr</td>
+      <td>An Xrandr utility library to detect, load and save monitor configurations</td>
+    </tr>
+    <tr>
+      <td>gnome-xkb</td>
+      <td>A keyboard layout utility library</td>
+    </tr>
+    <tr>
+      <td>gnome-bg</td>
+      <td>A wallpaper utility library</td>
+    </tr>
+    <tr>
+      <td>gnome-installer</td>
+      <td>A cross-distribution library used to install software applications</td>
+    </tr>
+  </tbody>
+</table>
 
 The `cinnamon-desktop` library is developed in C and the source code is available on [GitHub](https://github.com/linuxmint/cinnamon-desktop).
 
@@ -99,25 +125,72 @@ It also provides a DBus interface for presence awareness and application clean-u
 ### cinnamon-settings-daemon
 
 `cinnamon-settings-daemon` is a collection of background processes during your Cinnamon session.
+<table>
+  <thead>
+    <tr>
+      <th>Process</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>csd-automount</td>
+      <td>Automatically mounts hardware devices</td>
+    </tr>
+    <tr>
+      <td>csd-clipboard</td>
+      <td>Manages the copy-paste buffer</td>
+    </tr>
+    <tr>
+      <td>csd-housekeeping</td>
+      <td>Handles thumbnail cache and monitors disk space</td>
+    </tr>
+    <tr>
+      <td>csd-keyboard</td>
+      <td>Handles keyboard layouts</td>
+    </tr>
+    <tr>
+      <td>csd-media-keys</td>
+      <td>Handles media keys</td>
+    </tr>
+    <tr>
+      <td>csd-mouse</td>
+      <td>Handles mice and touch devices</td>
+    </tr>
+    <tr>
+      <td>csd-orientation</td>
+      <td>Handles accelerometers and orientation</td>
+    </tr>
+    <tr>
+      <td>csd-power</td>
+      <td>Handles battery and power management</td>
+    </tr>
+    <tr>
+      <td>csd-print-notifications</td>
+      <td>Handles printer notifications</td>
+    </tr>
+    <tr>
+      <td>csd-wacom</td>
+      <td>Handles Wacom devices</td>
+    </tr>
+    <tr>
+      <td>csd-xrandr</td>
+      <td>Handles monitor configuration</td>
+    </tr>
+    <tr>
+      <td>csd-xsettings</td>
+      <td>Handles X11 and GTK settings</td>
+    </tr>
+  </tbody>
+</table>
 
-| Process                | Description                                                                 |
-|------------------------|-----------------------------------------------------------------------------|
-| csd-automount          | Automatically mounts hardware devices                                       |
-| csd-clipboard          | Manages the copy-paste buffer                                               |
-| csd-housekeeping       | Handles thumbnail cache and monitors disk space                             |
-| csd-keyboard           | Handles keyboard layouts                                                     |
-| csd-media-keys         | Handles media keys                                                          |
-| csd-mouse              | Handles mice and touch devices                                              |
-| csd-orientation        | Handles accelerometers and orientation                                      |
-| csd-power              | Handles battery and power management                                        |
-| csd-print-notifications| Handles printer notifications                                               |
-| csd-wacom              | Handles Wacom devices                                                       |
-| csd-xrandr             | Handles monitor configuration                                               |
-| csd-xsettings          | Handles X11 and GTK settings                                                |
+<p>
+  <strong>Cinnamon-settings-daemon</strong> is developed in C and is available on
+  <a href="https://github.com/linuxmint/cinnamon-settings-daemon" target="_blank">GitHub</a>.
+</p>
 
-Cinnamon-settings-daemon is developed in C and is available on [GitHub](https://github.com/linuxmint/cinnamon-settings-daemon).
+<hr />
 
----
 
 ## Visible Desktop Layer
 
@@ -133,20 +206,57 @@ The Cinnamon project includes:
 
 **C components:**
 
-| Component | Description                                               |
-|-----------|-----------------------------------------------------------|
-| St        | Widget toolkit                                            |
-| Appsys    | Application metadata                                      |
-| DocInfo   | Recently opened documents                                 |
-| Tray      | Status icon management                                    |
+<table>
+  <thead>
+    <tr>
+      <th>Component</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>St</td>
+      <td>Widget toolkit</td>
+    </tr>
+    <tr>
+      <td>Appsys</td>
+      <td>Application metadata</td>
+    </tr>
+    <tr>
+      <td>DocInfo</td>
+      <td>Recently opened documents</td>
+    </tr>
+    <tr>
+      <td>Tray</td>
+      <td>Status icon management</td>
+    </tr>
+  </tbody>
+</table>
 
-**JavaScript components:**
+<h3>JavaScript components:</h3>
 
-| Component     | Description                                |
-|---------------|--------------------------------------------|
-| Cinnamon JS   | Panels, effects, HUD, etc.                 |
-| Applets       | Panel applets                              |
-| Desklets      | Desktop widgets                            |
+<table>
+  <thead>
+    <tr>
+      <th>Component</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Cinnamon JS</td>
+      <td>Panels, effects, HUD, etc.</td>
+    </tr>
+    <tr>
+      <td>Applets</td>
+      <td>Panel applets</td>
+    </tr>
+    <tr>
+      <td>Desklets</td>
+      <td>Desktop widgets</td>
+    </tr>
+  </tbody>
+</table>
 
 **Python:**
 
@@ -173,14 +283,40 @@ Available on [GitHub](https://github.com/linuxmint/nemo-extensions).
 A few Cinnamon configuration modules are still written in C and reside in this component.
 
 > **Note:** Originally all config modules came from GNOME's `gnome-control-center`. Most have since been rewritten in Python.
+ <table>
+  <thead>
+    <tr>
+      <th>Module</th>
+      <th>Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>color</td>
+      <td>Color profiles</td>
+    </tr>
+    <tr>
+      <td>datetime</td>
+      <td>Date and Time</td>
+    </tr>
+    <tr>
+      <td>display</td>
+      <td>Display configuration</td>
+    </tr>
+    <tr>
+      <td>network</td>
+      <td>Network configuration</td>
+    </tr>
+    <tr>
+      <td>online-accounts</td>
+      <td>Online Accounts</td>
+    </tr>
+    <tr>
+      <td>wacom</td>
+      <td>Wacom devices</td>
+    </tr>
+  </tbody>
+</table>
 
-| Module         | Purpose                           |
-|----------------|-----------------------------------|
-| color          | Color profiles                    |
-| datetime       | Date and Time                     |
-| display        | Display configuration             |
-| network        | Network configuration             |
-| online-accounts| Online Accounts                   |
-| wacom          | Wacom devices                     |
 
 Available on [GitHub](https://github.com/linuxmint/cinnamon-control-center).

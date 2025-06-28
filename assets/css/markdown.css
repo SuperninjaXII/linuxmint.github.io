@@ -54,4 +54,28 @@ main .container {
     padding-top: var(--font-lg);
     padding-bottom: var(--font-lg);
   }
+
+  img {
+    width: 50svw;
+  }
+
+  table {
+    border-collapse: collapse;
+
+    thead {
+      background: var(--neutral-3);
+      color: var(--neutral-1);
+    }
+
+    tbody {
+      background: var(--neutral-4);
+      color: var(--neutral-1);
+    }
+
+    th,
+    td {
+      padding: var(--space-sm);
+      border: 1px var(--neutral-5);
+    }
+  }
 }

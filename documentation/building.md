@@ -67,15 +67,40 @@ Reads and monitors installed applications.
 ### cinnamon-desktop
 
 Utility library for shared settings and functions.
-
-| Resource         | Description               |
-| ---------------- | ------------------------- |
-| cinnamon.desktop | Shared dconf schemas      |
-| libcvc           | PulseAudio volume control |
-| gnomerr          | Monitor configs           |
-| gnome-xkb        | Keyboard layouts          |
-| gnome-bg         | Wallpaper handling        |
-| gnome-installer  | App installation helper   |
+<table border="1" cellspacing="0" cellpadding="8">
+  <thead>
+    <tr>
+      <th>Resource</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>cinnamon.desktop</td>
+      <td>Shared dconf schemas</td>
+    </tr>
+    <tr>
+      <td>libcvc</td>
+      <td>PulseAudio volume control</td>
+    </tr>
+    <tr>
+      <td>gnomerr</td>
+      <td>Monitor configs</td>
+    </tr>
+    <tr>
+      <td>gnome-xkb</td>
+      <td>Keyboard layouts</td>
+    </tr>
+    <tr>
+      <td>gnome-bg</td>
+      <td>Wallpaper handling</td>
+    </tr>
+    <tr>
+      <td>gnome-installer</td>
+      <td>App installation helper</td>
+    </tr>
+  </tbody>
+</table>
 
 [GitHub](https://github.com/linuxmint/cinnamon-desktop)
 
@@ -102,12 +127,33 @@ Manages session startup and shutdown.
 
 Background system processes.
 
-| Process       | Description       |
-| ------------- | ----------------- |
-| csd-automount | Mounts devices    |
-| csd-clipboard | Clipboard manager |
-| csd-power     | Power management  |
-| ...           | ...               |
+<table border="1" cellspacing="0" cellpadding="10">
+  <thead>
+    <tr>
+      <th>Process</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>csd-automount</td>
+      <td>Mounts devices</td>
+    </tr>
+    <tr>
+      <td>csd-clipboard</td>
+      <td>Clipboard manager</td>
+    </tr>
+    <tr>
+      <td>csd-power</td>
+      <td>Power management</td>
+    </tr>
+    <tr>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+  </tbody>
+</table>
+
 
 [GitHub](https://github.com/linuxmint/cinnamon-settings-daemon)
 
