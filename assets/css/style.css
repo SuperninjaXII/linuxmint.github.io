@@ -120,11 +120,11 @@ header {
 
     .topic-nav {
       padding-left: var(--space-md);
-      padding-top: var(--space-lg);
     }
 
     .heading {
-      padding: var(--space-xs);
+      padding: var(--space-md);
+      text-align: left;
       font-weight: bolder;
       color: var(--neutral-5);
     }
@@ -133,6 +133,11 @@ header {
       list-style: none;
       font-size: var(--font-neutral);
       padding: var(--space-sm);
+
+      a {
+        color: var(--neutral-4);
+        text-decoration: none;
+      }
     }
 
     li:hover {
