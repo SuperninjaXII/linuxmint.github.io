@@ -78,4 +78,15 @@ main .container {
       border: 1px var(--neutral-5);
     }
   }
+
+  blockquote {
+    border-left: 4px solid var(--green-2);
+    padding: var(--space-md);
+    margin-bottom: var(--space-lg);
+
+    p {
+      text-indent: 0px;
+      color: var(--neutral-5);
+    }
+  }
 }
