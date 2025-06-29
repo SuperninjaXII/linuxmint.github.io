@@ -17,7 +17,7 @@ async function loadMarkdown(fileName) {
 loadMarkdown("welcome.md");
 
 async function getMarkdownFiles() {
-  const res = await fetch("/documentation/index.json");
+  const res = await fetch("../../documentation/index.json");
   const index = await res.json();
   nav.innerHTML = "";
   for (const topic in index) {
