@@ -19,6 +19,7 @@ header {
   .menu {
     margin-top: auto;
     margin-bottom: auto;
+    display: none;
 
     .icon {
       width: 40px;
@@ -187,6 +188,10 @@ header {
   .showMenu {
     visibility: hidden;
     left: -50svw;
+  }
+
+  .menu {
+    display: block !important;
   }
 
   nav {
