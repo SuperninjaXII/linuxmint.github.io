@@ -2,6 +2,9 @@ const converter = new showdown.Converter();
 const nav = document.querySelector("nav");
 const main = document.querySelector("main .container");
 
+function toggleMenu() {
+  nav.classList.toggle("showMenu");
+}
 async function loadMarkdown(fileName) {
   await fetch(`/documentation/${fileName}`)
     .then((Response) => Response.text())

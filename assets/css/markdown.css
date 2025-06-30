@@ -16,7 +16,7 @@ main .container {
   }
 
   h1 {
-    font-size: var(--font-xlg);
+    font-size: clamp(var(--font-md), var(--font-lg), var(--font-xlg));
     margin-bottom: var(--space-md);
     font-weight: 600;
   }
@@ -88,5 +88,11 @@ main .container {
       text-indent: 0px;
       color: var(--neutral-5);
     }
+  }
+}
+
+@media (width <=600px) {
+  .container {
+    width: 80svw !important;
   }
 }

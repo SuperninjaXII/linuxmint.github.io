@@ -16,6 +16,15 @@ header {
   background: var(--white);
   border-bottom: 1.2px solid var(--neutral-2);
 
+  .menu {
+    margin-top: auto;
+    margin-bottom: auto;
+
+    .icon {
+      width: 40px;
+    }
+  }
+
   .brand {
     display: flex;
     flex-direction: row;
@@ -76,6 +85,8 @@ header {
     overflow-y: auto;
     overflow-x: hidden;
     border-right: 1.2px solid var(--neutral-2);
+    transition: all 300ms;
+    visibility: visible;
 
     .topics-group {
       padding-left: var(--space-lg);
@@ -170,4 +181,42 @@ header {
 .active {
   color: var(--green-4) !important;
   text-decoration: underline;
+}
+
+@media (width <=600px) {
+  .showMenu {
+    visibility: hidden;
+    left: -50svw;
+  }
+
+  nav {
+    background: var(--white);
+    position: fixed;
+    width: 50svw !important;
+    height: 95svh !important;
+    z-index: 4;
+    left: 0;
+  }
+
+  main {
+    width: 100svw !important;
+  }
+
+  aside {
+    display: none !important;
+    visibility: hidden;
+  }
+
+  .secondary-nav {
+    margin-right: 0 !important;
+    margin-left: auto !important;
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+    gap: 5px !important;
+    font-size: var(--font-neutral);
+  }
+}
+
+@media (1250px >=width) {
+  /* … */
 }
