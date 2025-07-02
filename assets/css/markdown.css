@@ -4,6 +4,8 @@ main .container {
   margin-inline: auto;
   margin-top: var(--space-md);
   width: 45svw;
+  line-height: 22px;
+  text-transform: none;
 
   h1,
   h2,
@@ -12,18 +14,19 @@ main .container {
   h5,
   h6 {
     margin: var(--space-xs);
-    letter-spacing: -1.2px;
+    letter-spacing: 2px;
+    line-height: 44px;
   }
 
   h1 {
-    font-size: clamp(var(--font-md), var(--font-lg), var(--font-xlg));
+    font-size: var(--font-xlg);
     margin-bottom: var(--space-md);
-    font-weight: 600;
+    font-weight: 800;
   }
 
   h2 {
     font-size: var(--font-lg);
-    font-weight: 500;
+    font-weight: 600;
   }
 
   h3 {
@@ -36,8 +39,8 @@ main .container {
     text-indent: var(--space-lg);
     letter-spacing: 0.2px;
     line-height: 2rem;
-    font-weight: 350;
-
+    font-weight: 400;
+    font-size: var(--font-md);
     color: var(--neutral-4);
   }
 
@@ -51,17 +54,44 @@ main .container {
   }
 
   pre {
+    display: flex;
+    flex-direction: column-reverse;
     padding-top: var(--font-lg);
     padding-bottom: var(--font-lg);
 
     code {
       border-radius: 1rem;
       border: 1px solid var(--neutral-3);
-      font-size: var(--font-neutral);
-      font-family: monospace;
+      font-size: var(--font-md);
+      font-family: noto-mono;
       background: var(--bg2);
-      font-weight: 300 !important;
+      font-weight: 400;
+    }
 
+    .copy-btn {
+      display: flex;
+      flex-direction: row;
+      width: auto;
+      padding: var(--space-xs);
+      border-radius: 0.5rem;
+      border: none;
+      border: 1px solid var(--neutral-3);
+      outline: none;
+      margin-left: auto;
+
+      p,
+      img {
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+
+      p {
+        margin-left: 1;
+      }
+
+      img {
+        width: 30px;
+      }
     }
   }
 

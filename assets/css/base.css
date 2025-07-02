@@ -1,13 +1,23 @@
 @font-face {
-  font-family: noto;
+  font-family: noto-mono;
   src: url("./NotoSansMono-VariableFont_wdth,wght.ttf");
+}
+
+@font-face {
+  font-family: noto-serif;
+  src: url("./NotoSerif-VariableFont_wdth,wght.ttf");
+}
+
+@font-face {
+  font-family: noto-sans;
+  src: url("./NotoSans-VariableFont_wdth,wght.ttf");
 }
 
 :root {
   --black: #000;
   --white: #fff;
-  --bg: #FFFAFA;
-  --bg2: #FEFEFA;
+  --bg: #fffafa;
+  --bg2: #fefefa;
 
   --font-xs: 7px;
   --font-sm: 10px;
@@ -38,7 +48,7 @@
 *,
 :root,
 body {
-  font-family: noto;
+  font-family: noto-sans;
   margin: 0;
   padding: 0;
 }

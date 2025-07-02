@@ -5,6 +5,29 @@ const main = document.querySelector("main .container");
 function toggleMenu() {
   nav.classList.toggle("showMenu");
 }
+function loadCopyButtons(containerSelector) {
+  const container = document.querySelector(containerSelector);
+  const blocks = container.querySelectorAll("pre > code");
+
+  blocks.forEach((code) => {
+    const pre = code.parentElement;
+    if (pre.querySelector(".copy-btn")) return;
+
+    const button = document.createElement("button");
+    button.className = "copy-btn";
+    button.innerHTML = `<p>copy</p><img src="../icons/copy.svg" alt="copy"/>`;
+    pre.appendChild(button);
+    button.addEventListener("click", () => {
+      navigator.clipboard.writeText(code.textContent).then(() => {
+        button.textContent = "Copied";
+        setTimeout(() => {
+          button.innerHTML = `<img src="../icons/copy.svg" alt="copy"/>`;
+        }, 1500);
+      });
+    });
+  });
+}
+
 async function loadMarkdown(fileName) {
   await fetch(`/documentation/${fileName}`)
     .then((Response) => Response.text())
@@ -15,6 +38,7 @@ async function loadMarkdown(fileName) {
     })
     .catch(console.error);
   generateNavlinks();
+  loadCopyButtons("main .container");
 }
 
 loadMarkdown("welcome.md");
