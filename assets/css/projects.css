@@ -2,6 +2,7 @@
 
 #projects {
   width: 70svw;
+  max-height: 90svh;
   margin: auto;
 
   .heading {
@@ -25,4 +26,12 @@
   .description {
     letter-spacing: 0.1px;
   }
+}
+
+@media (width <=600px) {
+  #projects {
+    width: 90svw;
+    overflow-y: scroll !important;
+  }
+
 }
