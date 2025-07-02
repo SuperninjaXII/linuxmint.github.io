@@ -2,6 +2,7 @@
   "introduction": ["welcome.md","contributing.md","building.md","romeo.md","guidelines.md","reporting-an-issue.md"],
   "cinnamon": [
     "cinnamon.md",
+    "building-cinamon.md",
     "write-applet.md",
     "xlet-versioning.md",
     "xlet-settings.md",

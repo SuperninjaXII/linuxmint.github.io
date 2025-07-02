@@ -8,7 +8,6 @@ If you're looking to contribute to the development of Linux Mint, you're in the 
 
 This is the official Developer Documentation for Linux Mint. Whether you're a new contributor or a seasoned developer, this guide will help you understand the structure of the project, how to get started, and where you can make a difference.
 
-
 ## Getting Started
 
 New to Linux Mint development? Here’s how you can begin:
@@ -25,7 +24,7 @@ Understand the Mint ecosystem
 
 
 
- ## Core Projects
+## Core Projects
 
 Linux Mint is made up of many interrelated components. Some of the key projects include:
 

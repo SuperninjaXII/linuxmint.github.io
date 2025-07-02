@@ -4,7 +4,7 @@ main .container {
   margin-inline: auto;
   margin-top: var(--space-md);
   width: 45svw;
-  line-height: 22px;
+  line-height: 20px;
   text-transform: none;
 
   h1,
@@ -14,25 +14,25 @@ main .container {
   h5,
   h6 {
     margin: var(--space-xs);
-    letter-spacing: 2px;
+    letter-spacing: 1.2px;
     line-height: 44px;
   }
 
   h1 {
-    font-size: var(--font-xlg);
-    margin-bottom: var(--space-md);
+    font-size: var(--font-xxlg);
+    margin-bottom: var(--space-lg);
     font-weight: 800;
   }
 
   h2 {
-    font-size: var(--font-lg);
-    font-weight: 600;
+    font-size: var(--font-xlg);
+    font-weight: 500;
   }
 
   h3 {
-    font-weight: 500;
+    font-weight: 300;
     font-size: var(--font-lg);
-    margin-top: var(--space-xlg);
+    margin-top: var(--space-sm);
   }
 
   p {
@@ -45,10 +45,10 @@ main .container {
   }
 
   ul {
-    padding: var(--space-xlg);
+    padding-inline: var(--space-x-leftlg);
 
     li {
-      margin: var(--space-sm);
+      margin-left: var(--space-xlg);
       color: var(--neutral-5);
     }
   }
@@ -132,7 +132,20 @@ main .container {
 }
 
 @media (width <=600px) {
-  .container {
+  main .container {
     width: 80svw !important;
+
+    h1 {
+      font-size: var(--font-xlg) !important;
+    }
+
+    h2 {
+      font-size: var(--font-lg) !important;
+    }
+
+    h3 {
+      font-size: var(--font-md) !important;
+    }
   }
+
 }
