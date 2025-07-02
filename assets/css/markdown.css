@@ -53,6 +53,16 @@ main .container {
   pre {
     padding-top: var(--font-lg);
     padding-bottom: var(--font-lg);
+
+    code {
+      border-radius: 1rem;
+      border: 1px solid var(--neutral-3);
+      font-size: var(--font-neutral);
+      font-family: monospace;
+      background: var(--bg2);
+      font-weight: 300 !important;
+
+    }
   }
 
   img {

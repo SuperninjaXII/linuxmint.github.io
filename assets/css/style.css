@@ -14,7 +14,7 @@ header {
   width: 100vw;
   height: 8vh;
   background: var(--white);
-  border-bottom: 1.2px solid var(--neutral-2);
+  border-bottom: .9px solid var(--neutral-2);
 
   .menu {
     margin-top: auto;
@@ -22,7 +22,7 @@ header {
     display: none;
 
     .icon {
-      width: 40px;
+      width: 30px;
     }
   }
 
@@ -36,13 +36,13 @@ header {
     padding: var(--space-sm);
 
     .logo {
-      width: 40px;
+      width: 30px;
     }
 
     p {
       margin-top: auto;
       margin-bottom: auto;
-      font-size: var(--font-lg);
+      font-size: var(--font-md);
       padding: var(--space-xs);
     }
   }
@@ -77,6 +77,7 @@ header {
 .main-container {
   display: flex;
   flex-direction: row;
+  background: var(--bg);
 
   nav {
     display: flex;
@@ -107,8 +108,8 @@ header {
       }
 
       li:hover {
-        color: var(--white);
-        background: var(--green-4);
+        border-left: 1px solid var(--green-3);
+        background: var(--bg);
       }
     }
   }

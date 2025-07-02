@@ -6,7 +6,8 @@
 :root {
   --black: #000;
   --white: #fff;
-  --bg: #ecf3f9;
+  --bg: #FFFAFA;
+  --bg2: #FEFEFA;
 
   --font-xs: 7px;
   --font-sm: 10px;
