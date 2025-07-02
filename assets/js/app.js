@@ -88,7 +88,7 @@ function generateNavlinks() {
 
   toc.innerHTML = "";
   headings.forEach((heading, index) => {
-    const level = parseInt(heading.tagName.substring(1)); // h1 -> 1
+    const level = parseInt(heading.tagName.substring(1));
     const text = heading.textContent.trim();
     const id = heading.id || `heading-${index}`;
     heading.id = id;
@@ -104,14 +104,12 @@ function generateNavlinks() {
 
     li.appendChild(a);
 
-    // Add classes based on level
     if (level === 1) {
       li.classList.add("parent");
     } else {
       li.classList.add("child", `child-level-${level}`);
     }
 
-    // Nesting logic
     if (level > currentLevel) {
       const newUl = document.createElement("ul");
       if (stack.length > 0) {
