@@ -126,7 +126,7 @@ function MyApplet(orientation, panel_height, instance_id) {
 }
 ```
 
-This is the standard constructor of a Javascript Object. When someone calls it, it calls the `_init` function of the object, and does stuff. Note that here we called our applet `MyApplet`. You are free to call it whatever you want (and change the `main` function accordingly, of course), but there really is no reason to do so!.
+This is the standard constructor of a JavaScript Object. When someone calls it, it calls the `_init` function of the object, and does stuff. Note that here we called our applet `MyApplet`. You are free to call it whatever you want (and change the `main` function accordingly, of course), but there really is no reason to do so!.
 
 Also note that we pass all the `orientation` etc. information down the chain until it ultimately reaches the applet API.
 

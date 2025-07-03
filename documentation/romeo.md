@@ -1,4 +1,3 @@
-
 # Romeo
 
 The development team uses Romeo to push new BETA/ALPHA features.
