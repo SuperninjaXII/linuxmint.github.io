@@ -78,6 +78,7 @@ body {
   font-family: noto-sans;
   margin: 0;
   padding: 0;
+  background: var(--bg);
 }
 
 .light {

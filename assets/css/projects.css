@@ -2,9 +2,9 @@
 
 #projects {
   width: 70svw;
-  max-height: 90svh;
+  max-height: 95svh;
   margin: auto;
-
+overflow-y: auto !important;
   .heading {
     font-size: var(--font-xlg);
   }
@@ -31,7 +31,7 @@
 @media (width <=600px) {
   #projects {
     width: 90svw;
-    overflow-y: scroll !important;
+    
   }
 
 }
