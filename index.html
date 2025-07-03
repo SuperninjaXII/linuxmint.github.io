@@ -6,22 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>linuxmint|Documentation</title>
     <link href="assets/css/style.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
-    <link rel="stylesheet" href="//unpkg.com/@catppuccin/highlightjs@1.0.1/css/catppuccin-latte.css">
 
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/atom-one-light.min.css"
+        media="screen" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/atom-one-dark.min.css"
+        media="screen and (prefers-color-scheme: dark)" />
 
 </head>
 
 <body>
     <header>
         <div class="menu">
-            <img src="./icons/menu.svg" alt="menu" class="icon" onclick="toggleMenu()">
+            <picture>
+                <source srcset="./icons/menu-dark.svg" media="(prefers-color-scheme: dark)">
+                <img src="./icons/menu.svg" alt="menu" class="icon" onclick="toggleMenu()">
+            </picture>
         </div>
-        <div class="brand">
-            <img src="./icons/linux-mint.svg" alt="logo" class="logo" id="logo" />
+        <div class="brand light">
+            <picture>
+                <source srcset="./icons/mint-logo.svg" media="(prefers-color-scheme: dark)">
+                <img class="logo" src="./icons/linux-mint.svg">
+            </picture>
             <p>Mint</p>
         </div>
+
         <div class="secondary-nav" hx-push-url="true">
             <li class="active">
                 <a href="/index.html">Documentation</a>

@@ -15,13 +15,13 @@ function loadCopyButtons(containerSelector) {
 
     const button = document.createElement("button");
     button.className = "copy-btn";
-    button.innerHTML = `<p>copy</p><img src="../icons/copy.svg" alt="copy"/>`;
+    button.innerHTML = `copy`
     pre.appendChild(button);
     button.addEventListener("click", () => {
       navigator.clipboard.writeText(code.textContent).then(() => {
         button.textContent = "Copied";
         setTimeout(() => {
-          button.innerHTML = `<img src="../icons/copy.svg" alt="copy"/>`;
+          button.innerHTML = `copy`
         }, 1500);
       });
     });

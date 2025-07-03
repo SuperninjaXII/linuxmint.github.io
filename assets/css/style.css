@@ -13,7 +13,8 @@ header {
   top: 0;
   width: 100vw;
   height: 8vh;
-  background: var(--white);
+  background: var(--bg2);
+  color: var(--neutral-1);
   border-bottom: .9px solid var(--neutral-2);
 
   .menu {
@@ -89,6 +90,7 @@ header {
     border-right: 1.2px solid var(--neutral-2);
     transition: all 300ms;
     visibility: visible;
+
 
     .topics-group {
       padding-left: var(--space-lg);
@@ -196,7 +198,7 @@ header {
   }
 
   nav {
-    background: var(--white);
+    background: var(--bg);
     position: fixed;
     width: 50svw !important;
     height: 95svh !important;
@@ -223,6 +225,23 @@ header {
   }
 }
 
-@media (1250px >=width) {
-  /* … */
+@media (prefers-color-scheme: dark) {
+  a {
+    color: var(--neutral-1) !important;
+  }
+
+  header,
+  nav,
+  aside {
+    border-color: var(--neutral-5) !important;
+  }
+
+
+  nav .topic-heading {
+    color: var(--neutral-1) !important;
+  }
+
+  nav ul li {
+    color: var(--neutral-2) !important;
+  }
 }

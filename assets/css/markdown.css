@@ -5,7 +5,6 @@ main .container {
   margin-top: var(--space-md);
   width: 45svw;
   line-height: 20px;
-  text-transform: none;
 
   h1,
   h2,
@@ -69,29 +68,15 @@ main .container {
     }
 
     .copy-btn {
-      display: flex;
-      flex-direction: row;
-      width: auto;
-      padding: var(--space-xs);
+      height: 25px;
+      padding-inline: 20px;
+      background: var(--bg2);
       border-radius: 0.5rem;
-      border: none;
       border: 1px solid var(--neutral-3);
       outline: none;
       margin-left: auto;
+      color: var(--neutral-5);
 
-      p,
-      img {
-        margin-top: auto;
-        margin-bottom: auto;
-      }
-
-      p {
-        margin-left: 1;
-      }
-
-      img {
-        width: 30px;
-      }
     }
   }
 
@@ -123,10 +108,10 @@ main .container {
     border-left: 4px solid var(--green-2);
     padding: var(--space-md);
     margin-bottom: var(--space-lg);
+    background: var(--bg2);
 
     p {
       text-indent: 0px;
-      color: var(--neutral-5);
     }
   }
 }
@@ -144,8 +129,24 @@ main .container {
     }
 
     h3 {
-      font-size: var(--font-md) !important;
+      font-size: var(--font-lg) !important;
+      text-decoration: underline;
     }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .container {
+      color: var(--neutral-1);
+    }
+
+    p {
+      color: var(--neutral-2) !important;
+    }
+
+    button {
+      color: var(--neutral-1) !important;
+    }
+
   }
 
 }
