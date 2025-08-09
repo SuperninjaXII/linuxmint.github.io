@@ -64,6 +64,11 @@ export default defineConfig({
       },
     ],
 
-    socialLinks: [{ icon: "github", link: "" }],
+    socialLinks: [
+      {
+        icon: "github",
+        link: "https://github.com/SuperninjaXII/linuxmint.github.io",
+      },
+    ],
   },
 });
