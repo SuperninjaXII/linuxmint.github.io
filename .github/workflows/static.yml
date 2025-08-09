@@ -45,7 +45,7 @@ jobs:
       - name: Install pnpm
         run: curl -fsSL https://get.pnpm.io/install.sh | sh -
       - name: Install dependencies
-        run: pnpm install # or pnpm install / yarn install / bun install
+        run: source /home/runner/.bashrc && pnpm install # or pnpm install / yarn install / bun install
       - name: Build with VitePress
         run: pnpm run docs:build # or pnpm docs:build / yarn docs:build / bun run docs:build
       - name: Upload artifact
