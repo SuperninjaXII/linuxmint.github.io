@@ -2,8 +2,10 @@ import { defineConfig } from "vitepress";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  base: "/linuxmint.github.io/",
   title: "Linuxmint docs",
   description: "The offical linux mint developer documentation",
+
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
