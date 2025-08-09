@@ -5,7 +5,7 @@ layout: home
 hero:
   name: "Linuxmint"
   text: "The offical linux mint developer documentation"
-  tagline: My great project tagline
+  tagline: an OS for sane people :)
   actions:
     - theme: brand
       text: Get Started
