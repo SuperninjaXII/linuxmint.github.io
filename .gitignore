@@ -4,3 +4,4 @@ Gemfile.lock
 .idea
 .obsidian
 ./node_modules
+/node_modules
