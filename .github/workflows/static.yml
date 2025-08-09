@@ -42,10 +42,13 @@ jobs:
           node-version: 22
       - name: Setup Pages
         uses: actions/configure-pages@v4
+
       - name: Install pnpm
-        run: curl -fsSL https://get.pnpm.io/install.sh | sh -
+        uses: pnpm/action-setup@v3
+        with:
+          version: 9
       - name: Install dependencies
-        run: bash && pnpm install # or pnpm install / yarn install / bun install
+        run: pnpm install # or pnpm install / yarn install / bun install
       - name: Build with VitePress
         run: pnpm run docs:build # or pnpm docs:build / yarn docs:build / bun run docs:build
       - name: Upload artifact
