@@ -1,5 +1,5 @@
 
-# Project Title
+# Linux mint documentation 
 
 This is the linux mint documention site. It uses vite press moved from a custom version.
 
